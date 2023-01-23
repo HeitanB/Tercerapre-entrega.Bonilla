@@ -1,0 +1,40 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Este es el título del Inicio que cambio</h1>
+  
+
+    <h3>Podes buscar un jugador:</h3>
+
+    <form action="/AppCoder/buscar/" method="GET">
+
+        <input type="str" name="jugador" id="jugador">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+
+    
+
+    {% if cursos %}
+
+    <p>Estamos buscando el: {{jugador}}</p>
+
+    <ul>
+	{% for curso in cursos %}
+		<li> {{equipo.nombre}} </li>
+	{% endfor %}
+
+    </ul>
+
+    {% endif %}
+
+{% endblock %}
